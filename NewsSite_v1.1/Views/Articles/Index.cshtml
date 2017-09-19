@@ -1,0 +1,67 @@
+﻿@model IEnumerable<NewsSite_v1._1.Models.Article>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Articles</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create", null, new { @class = "btn btn-info" })
+</p>
+<table class="table" id="articleTable">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.AId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.JId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Journalist.FName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Title)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PostTime)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Category)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.JId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Journalist.FName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Title)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PostTime)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Category)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.AId }, new { @class = "btn btn-success btn-xs" }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.AId }, new { @class = "btn btn-warning btn-xs" }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.AId }, new { @class = "btn btn-danger btn-xs" })
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
