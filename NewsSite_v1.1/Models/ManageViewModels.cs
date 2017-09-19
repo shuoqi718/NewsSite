@@ -41,6 +41,14 @@ namespace NewsSite_v1._1.Models
         public string ConfirmPassword { get; set; }
     }
 
+    public class ImageViewModel
+    {
+        [Required]
+        [DataType(DataType.ImageUrl)]
+        [Display(Name ="Image")]
+        public string image { get; set; }
+    }
+
     public class ChangePasswordViewModel
     {
         [Required]

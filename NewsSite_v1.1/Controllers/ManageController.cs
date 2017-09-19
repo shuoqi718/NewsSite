@@ -10,6 +10,7 @@ using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using NewsSite_v1._1.Models;
 using System.IO;
+using System.Collections;
 
 namespace NewsSite_v1._1.Controllers
 {
@@ -56,6 +57,33 @@ namespace NewsSite_v1._1.Controllers
 
         public ActionResult Upload()
         {
+            ArrayList fileList = new ArrayList();
+            string path = "~/Upload/";
+            DirectoryInfo dir = new DirectoryInfo(Server.MapPath(path));
+            try
+            {
+                if (!Directory.Exists(path))
+                {
+                    Directory.CreateDirectory(path);
+                }
+            }
+            catch(Exception e)
+            {
+                ViewBag.exception = "There is no such file";
+            }
+            
+            foreach (FileInfo file in dir.GetFiles())
+            {
+                if (file.Extension == ".jpg" ||
+                    file.Extension == ".jpeg" ||
+                    file.Extension == ".bmp" ||
+                    file.Extension == "gif" ||
+                    file.Extension == "png")
+                {
+                    fileList.Add(path + file.Name);
+                }
+            }
+            ViewBag.fileList = fileList;
             return View();
         }
 
@@ -71,10 +99,10 @@ namespace NewsSite_v1._1.Controllers
                     Directory.CreateDirectory(path);
                 }
                 FileInfo file = new FileInfo(postedFile.FileName);
-                if(file.Extension == ".jpg" &&
-                    file.Extension == ".jpeg" &&
-                    file.Extension == ".bmp" &&
-                    file.Extension == "gif" &&
+                if(file.Extension == ".jpg" ||
+                    file.Extension == ".jpeg" ||
+                    file.Extension == ".bmp" ||
+                    file.Extension == "gif" ||
                     file.Extension == "png")
                 {
                     postedFile.SaveAs(path + Path.GetFileName(postedFile.FileName));
@@ -84,6 +112,8 @@ namespace NewsSite_v1._1.Controllers
                 {
                     ViewBag.Message = "Sorry, you can't upload this type of file";
                 }
+
+                
             }
 
             return View();
