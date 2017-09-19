@@ -199,16 +199,21 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\ArticlesController.cs" />
+    <Compile Include="Controllers\EmailFormModelsController.cs" />
+    <Compile Include="Migrations\201709191147571_email.cs" />
+    <Compile Include="Migrations\201709191147571_email.Designer.cs">
+      <DependentUpon>201709191147571_email.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201709191152103_email1.cs" />
+    <Compile Include="Migrations\201709191152103_email1.Designer.cs">
+      <DependentUpon>201709191152103_email1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\EmailFormModel.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\JournalistsController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201709180511195_udpatetable.cs" />
-    <Compile Include="Migrations\201709180511195_udpatetable.Designer.cs">
-      <DependentUpon>201709180511195_udpatetable.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -579,11 +584,11 @@
     <Content Include="Views\Journalists\Index.cshtml" />
     <Content Include="Views\Manage\SendEmail.cshtml" />
     <Content Include="Views\Manage\Upload.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\201709180511195_udpatetable.resx">
-      <DependentUpon>201709180511195_udpatetable.cs</DependentUpon>
-    </EmbeddedResource>
+    <Content Include="Views\EmailFormModels\Create.cshtml" />
+    <Content Include="Views\EmailFormModels\Delete.cshtml" />
+    <Content Include="Views\EmailFormModels\Details.cshtml" />
+    <Content Include="Views\EmailFormModels\Edit.cshtml" />
+    <Content Include="Views\EmailFormModels\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -591,6 +596,14 @@
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201709191147571_email.resx">
+      <DependentUpon>201709191147571_email.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709191152103_email1.resx">
+      <DependentUpon>201709191152103_email1.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

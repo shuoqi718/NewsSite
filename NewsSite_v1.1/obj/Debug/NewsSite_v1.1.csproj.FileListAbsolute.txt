@@ -79,5 +79,6 @@ c:\users\you\documents\visual studio 2015\Projects\NewsSite_v1.1\NewsSite_v1.1\b
 c:\users\you\documents\visual studio 2015\Projects\NewsSite_v1.1\NewsSite_v1.1\obj\Debug\NewsSite_v1.1.csprojResolveAssemblyReference.cache
 c:\users\you\documents\visual studio 2015\Projects\NewsSite_v1.1\NewsSite_v1.1\obj\Debug\NewsSite_v1.1.dll
 c:\users\you\documents\visual studio 2015\Projects\NewsSite_v1.1\NewsSite_v1.1\obj\Debug\NewsSite_v1.1.pdb
-c:\users\you\documents\visual studio 2015\Projects\NewsSite_v1.1\NewsSite_v1.1\obj\Debug\NewsSite_v1._1.Migrations.udpatetable.resources
-c:\users\you\documents\visual studio 2015\Projects\NewsSite_v1.1\NewsSite_v1.1\obj\Debug\NewsSite_v1.1.csproj.GenerateResource.Cache
+C:\Users\you\Documents\Visual Studio 2015\Projects\NewsSite_v1.1\NewsSite_v1.1\obj\Debug\NewsSite_v1._1.Migrations.email.resources
+C:\Users\you\Documents\Visual Studio 2015\Projects\NewsSite_v1.1\NewsSite_v1.1\obj\Debug\NewsSite_v1.1.csproj.GenerateResource.Cache
+C:\Users\you\Documents\Visual Studio 2015\Projects\NewsSite_v1.1\NewsSite_v1.1\obj\Debug\NewsSite_v1._1.Migrations.email1.resources

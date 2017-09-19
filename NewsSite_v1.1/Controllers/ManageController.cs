@@ -119,6 +119,8 @@ namespace NewsSite_v1._1.Controllers
             return View();
         }
 
+       
+        
         public ActionResult SendEmail()
         {
             return View();

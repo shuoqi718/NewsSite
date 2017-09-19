@@ -15,6 +15,8 @@ namespace NewsSite_v1._1.Models
         public virtual DbSet<Article> Articles { get; set; }
         public virtual DbSet<Journalist> Journalists { get; set; }
 
+        public virtual DbSet<EmailFormModel> EmailForm { get; set; }
+
         
     }
 }
