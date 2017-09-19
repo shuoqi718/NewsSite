@@ -20,6 +20,8 @@ namespace NewsSite_v1._1.Models
         public IList<AuthenticationDescription> OtherLogins { get; set; }
     }
 
+    
+
     public class FactorViewModel
     {
         public string Purpose { get; set; }

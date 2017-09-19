@@ -9,6 +9,7 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using NewsSite_v1._1.Models;
+using System.IO;
 
 namespace NewsSite_v1._1.Controllers
 {
@@ -51,6 +52,41 @@ namespace NewsSite_v1._1.Controllers
             {
                 _userManager = value;
             }
+        }
+
+        public ActionResult Upload()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        [Authorize]
+        public ActionResult Upload(HttpPostedFileBase postedFile)
+        {
+            if (postedFile != null)
+            {
+                string path = Server.MapPath("~/Upload/");
+                if (!Directory.Exists(path))
+                {
+                    Directory.CreateDirectory(path);
+                }
+                FileInfo file = new FileInfo(postedFile.FileName);
+                if(file.Extension == ".jpg" &&
+                    file.Extension == ".jpeg" &&
+                    file.Extension == ".bmp" &&
+                    file.Extension == "gif" &&
+                    file.Extension == "png")
+                {
+                    postedFile.SaveAs(path + Path.GetFileName(postedFile.FileName));
+                    ViewBag.Message = "File uploaded successfully.";
+                }
+                else
+                {
+                    ViewBag.Message = "Sorry, you can't upload this type of file";
+                }
+            }
+
+            return View();
         }
 
         public ActionResult SendEmail()

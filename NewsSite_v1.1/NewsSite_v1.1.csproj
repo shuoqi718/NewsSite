@@ -578,6 +578,7 @@
     <Content Include="Views\Journalists\Edit.cshtml" />
     <Content Include="Views\Journalists\Index.cshtml" />
     <Content Include="Views\Manage\SendEmail.cshtml" />
+    <Content Include="Views\Manage\Upload.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201709180511195_udpatetable.resx">
