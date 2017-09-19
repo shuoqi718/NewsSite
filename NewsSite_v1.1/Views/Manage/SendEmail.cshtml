@@ -1,0 +1,34 @@
+﻿@model NewsSite_v1._1.Models.EmailFormModel
+@{
+    ViewBag.Title = "Send Email";
+}
+
+<h4>@ViewBag.Test</h4>
+@using Microsoft.AspNet.Identity
+@using (Html.BeginForm())
+{
+    if (Request.IsAuthenticated && User.Identity.GetUserName() == "shuoqi715@gmail.com")
+    { 
+        @Html.AntiForgeryToken()
+        <h4>Send Email to All Users</h4>
+        <hr />
+        <div class="form-group">
+            @Html.LabelFor(m => m.Message, new { @class = "col-md-2 control-label" })
+            <div class="col-md-10">
+                @Html.TextAreaFor(m => m.Message, new { @class = "form-control" })
+                @Html.ValidationMessageFor(m => m.Message)
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" class="btn btn-default" value="Send" /><br />
+                @if (ViewBag.Sending != "")
+                {
+                    <p>@ViewBag.Sending</p>
+                }
+            </div>
+        </div>
+    }
+}
+
+

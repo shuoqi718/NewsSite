@@ -199,6 +199,7 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\ArticlesController.cs" />
+    <Compile Include="Models\EmailFormModel.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\JournalistsController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -576,6 +577,7 @@
     <Content Include="Views\Journalists\Details.cshtml" />
     <Content Include="Views\Journalists\Edit.cshtml" />
     <Content Include="Views\Journalists\Index.cshtml" />
+    <Content Include="Views\Manage\SendEmail.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201709180511195_udpatetable.resx">

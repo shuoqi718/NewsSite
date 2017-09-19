@@ -23,6 +23,14 @@
             }
             ]
         </dd>
+        @using Microsoft.AspNet.Identity
+        @if (Request.IsAuthenticated && User.Identity.GetUserName() == "shuoqi715@gmail.com")
+        {
+            <dt>Send Email to all users:</dt>
+            <dd>
+                @Html.ActionLink("Send Email", "SendEmail");
+            </dd>
+        }
         <dt>External Logins:</dt>
         <dd>
             @Model.Logins.Count [

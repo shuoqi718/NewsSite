@@ -3,6 +3,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
+using System.Net;
+using System.Net.Mail;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
@@ -15,6 +17,7 @@ namespace NewsSite_v1._1.Controllers
     {
         private ApplicationSignInManager _signInManager;
         private ApplicationUserManager _userManager;
+        private ApplicationDbContext db = new ApplicationDbContext();
 
         public ManageController()
         {
@@ -50,6 +53,48 @@ namespace NewsSite_v1._1.Controllers
             }
         }
 
+        public ActionResult SendEmail()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<ActionResult> SendEmail(EmailFormModel model)
+        {
+            ViewBag.Sending = "Sending Successful!";
+            if (ModelState.IsValid)
+            {
+                var body = "<p>Message:</p><p>{0}</p>";
+                var message = new MailMessage();
+                var User = db.Users.ToList();
+                foreach(var item in User)
+                {
+                    message.To.Add(new MailAddress(item.Email));
+                }
+                message.From = new MailAddress("shuoqi718@outlook.com");  // replace with valid value
+                message.Subject = "Your email subject";
+                message.Body = string.Format(body, model.Message);
+                message.IsBodyHtml = true;
+
+
+                using (var smtp = new SmtpClient())
+                {
+                    var credential = new NetworkCredential
+                    {
+                        UserName = "shuoqi718@outlook.com",  // replace with valid value
+                        Password = "xddx502502"  // replace with valid value
+                    };
+                    smtp.Credentials = credential;
+                    smtp.Host = "smtp-mail.outlook.com";
+                    smtp.Port = 587;
+                    smtp.EnableSsl = true;
+                    await smtp.SendMailAsync(message);
+                    //return View();
+                }
+            }
+            return View(model);
+        }
         //
         // GET: /Manage/Index
         public async Task<ActionResult> Index(ManageMessageId? message)
