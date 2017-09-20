@@ -19,18 +19,5 @@
             <br />
             <span style="color:green">@ViewBag.Message</span>
     }
-    @if (ViewBag.fileList != null)
-    {
-        <div class="row">
-            @foreach (var item in ViewBag.fileList)
-            {
-            <div class="col-md-4">
-                <div class="thumbnail">
-                    <img src="@Url.Content(item)" />
-                </div>
-            </div>
-            }
-        </div>
-    }
     
 </div>

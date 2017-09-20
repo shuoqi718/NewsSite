@@ -57,33 +57,7 @@ namespace NewsSite_v1._1.Controllers
 
         public ActionResult Upload()
         {
-            ArrayList fileList = new ArrayList();
-            string path = "~/Upload/";
-            DirectoryInfo dir = new DirectoryInfo(Server.MapPath(path));
-            try
-            {
-                if (!Directory.Exists(path))
-                {
-                    Directory.CreateDirectory(path);
-                }
-            }
-            catch(Exception e)
-            {
-                ViewBag.exception = "There is no such file";
-            }
             
-            foreach (FileInfo file in dir.GetFiles())
-            {
-                if (file.Extension == ".jpg" ||
-                    file.Extension == ".jpeg" ||
-                    file.Extension == ".bmp" ||
-                    file.Extension == "gif" ||
-                    file.Extension == "png")
-                {
-                    fileList.Add(path + file.Name);
-                }
-            }
-            ViewBag.fileList = fileList;
             return View();
         }
 
@@ -93,10 +67,27 @@ namespace NewsSite_v1._1.Controllers
         {
             if (postedFile != null)
             {
-                string path = Server.MapPath("~/Upload/");
+                string ErrorMessage;
+                string path = Server.MapPath("~/Upload/" + User.Identity.GetUserName() + "/");
                 if (!Directory.Exists(path))
                 {
                     Directory.CreateDirectory(path);
+                }
+                DirectoryInfo dir = new DirectoryInfo(path);
+                if(dir.GetFiles().Length >= 1)
+                {
+                    foreach(FileInfo files in dir.GetFiles())
+                    {
+                        try
+                        {
+                            System.IO.File.Delete(path + files.Name);
+                            ErrorMessage = "File Deleted";
+                        }
+                        catch (Exception e)
+                        {
+                            ErrorMessage = e.Message;
+                        }
+                    }
                 }
                 FileInfo file = new FileInfo(postedFile.FileName);
                 if(file.Extension == ".jpg" ||
@@ -185,6 +176,33 @@ namespace NewsSite_v1._1.Controllers
                 Logins = await UserManager.GetLoginsAsync(userId),
                 BrowserRemembered = await AuthenticationManager.TwoFactorBrowserRememberedAsync(userId)
             };
+            ArrayList fileList = new ArrayList();
+            string path = "~/Upload/" + User.Identity.GetUserName() + "/";
+            DirectoryInfo dir = new DirectoryInfo(Server.MapPath(path));
+            try
+            {
+                if (!Directory.Exists(Server.MapPath(path)))
+                {
+                    Directory.CreateDirectory(Server.MapPath(path));
+                }
+            }
+            catch (Exception e)
+            {
+                ViewBag.exception = "There is no such file";
+            }
+
+            foreach (FileInfo file in dir.GetFiles())
+            {
+                if (file.Extension == ".jpg" ||
+                    file.Extension == ".jpeg" ||
+                    file.Extension == ".bmp" ||
+                    file.Extension == "gif" ||
+                    file.Extension == "png")
+                {
+                    fileList.Add(path + file.Name);
+                }
+            }
+            ViewBag.fileList = fileList;
             return View(model);
         }
 
