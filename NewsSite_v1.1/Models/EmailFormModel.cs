@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.Linq;
 
 namespace NewsSite_v1._1.Models
 {
@@ -9,16 +10,17 @@ namespace NewsSite_v1._1.Models
         [Required]
         public int Id { get; set; }
 
+        [Display(Name = "Check")]
         [Required]
-        public List<bool> checkList { get; set; }
+        public bool checkList { get; set; }
 
         [Required]
-        public List<string> Username { get; set; }
+        public string Username { get; set; }
 
         [Required]
-        public List<string> Email { get; set; }
+        public string Email{ get; set; }
 
-        [Required]
+
         public string Message { get; set; }
     }
 }

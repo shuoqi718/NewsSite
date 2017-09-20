@@ -208,6 +208,14 @@
     <Compile Include="Migrations\201709191152103_email1.Designer.cs">
       <DependentUpon>201709191152103_email1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201709200003437_Email2.cs" />
+    <Compile Include="Migrations\201709200003437_Email2.Designer.cs">
+      <DependentUpon>201709200003437_Email2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201709200045048_email3.cs" />
+    <Compile Include="Migrations\201709200045048_email3.Designer.cs">
+      <DependentUpon>201709200045048_email3.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\EmailFormModel.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\JournalistsController.cs" />
@@ -584,9 +592,6 @@
     <Content Include="Views\Journalists\Index.cshtml" />
     <Content Include="Views\Manage\SendEmail.cshtml" />
     <Content Include="Views\Manage\Upload.cshtml" />
-    <Content Include="Views\EmailFormModels\Create.cshtml" />
-    <Content Include="Views\EmailFormModels\Delete.cshtml" />
-    <Content Include="Views\EmailFormModels\Details.cshtml" />
     <Content Include="Views\EmailFormModels\Edit.cshtml" />
     <Content Include="Views\EmailFormModels\Index.cshtml" />
   </ItemGroup>
@@ -603,6 +608,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201709191152103_email1.resx">
       <DependentUpon>201709191152103_email1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709200003437_Email2.resx">
+      <DependentUpon>201709200003437_Email2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709200045048_email3.resx">
+      <DependentUpon>201709200045048_email3.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -7,13 +7,10 @@
 
 <h2>Index</h2>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
 <table class="table">
     <tr>
         <th>
-            @Html.Display("Check")
+            @Html.DisplayNameFor(model => model.checkList)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Username)
@@ -27,7 +24,7 @@
 @foreach (var item in Model) {
     <tr>
         <td>
-            @Html.CheckBoxFor()
+            @Html.CheckBoxFor(modelItem => item.checkList)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Username)
@@ -35,12 +32,12 @@
         <td>
             @Html.DisplayFor(modelItem => item.Email)
         </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
-        </td>
+        
     </tr>
 }
-
+    <tr>
+        <td>
+            <input type="submit" value="next" class="btn btn-info" />
+        </td>
+    </tr>
 </table>
