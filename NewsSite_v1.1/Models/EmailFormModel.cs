@@ -12,13 +12,17 @@ namespace NewsSite_v1._1.Models
 
         [Display(Name = "Check")]
         [Required]
-        public bool checkList { get; set; }
+        public bool check { get; set; }
 
         [Required]
+        [Display(Name = "Username")]
         public string Username { get; set; }
 
+
         [Required]
-        public string Email{ get; set; }
+        [EmailAddress]
+        [Display(Name = "Email")]
+        public string Email { get; set; }
 
 
         public string Message { get; set; }

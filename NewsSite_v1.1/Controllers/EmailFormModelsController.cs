@@ -18,7 +18,9 @@ namespace NewsSite_v1._1.Controllers
         // GET: EmailFormModels
         public ActionResult Index()
         {
+
             var User = db1.Users.ToList();
+            db.Database.ExecuteSqlCommand("delete from EmailFormModels");
             foreach(var item in User)
             {
                 EmailFormModel model = new EmailFormModel();
@@ -31,8 +33,16 @@ namespace NewsSite_v1._1.Controllers
         }
 
        [HttpPost]
-       public ActionResult Index(List<bool> check)
+       public ActionResult Index(List<EmailFormModel> modelList)
         {
+            if(ModelState.IsValid)
+            {
+                foreach(var model in modelList)
+                {
+                    db.EmailForm.Remove(model);
+                }
+                return RedirectToAction("Index");
+            }
             return View();
         }
         

@@ -10,7 +10,7 @@
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.checkList)
+            @Html.DisplayNameFor(model => model.check)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Username)
@@ -24,7 +24,7 @@
 @foreach (var item in Model) {
     <tr>
         <td>
-            @Html.CheckBoxFor(modelItem => item.checkList)
+            @Html.EditorFor(modelItem => item.check)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Username)

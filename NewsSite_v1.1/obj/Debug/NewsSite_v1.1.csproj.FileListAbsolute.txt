@@ -84,3 +84,6 @@ C:\Users\you\Documents\Visual Studio 2015\Projects\NewsSite_v1.1\NewsSite_v1.1\o
 C:\Users\you\Documents\Visual Studio 2015\Projects\NewsSite_v1.1\NewsSite_v1.1\obj\Debug\NewsSite_v1._1.Migrations.email1.resources
 C:\Users\you\Documents\Visual Studio 2015\Projects\NewsSite_v1.1\NewsSite_v1.1\obj\Debug\NewsSite_v1._1.Migrations.Email2.resources
 C:\Users\you\Documents\Visual Studio 2015\Projects\NewsSite_v1.1\NewsSite_v1.1\obj\Debug\NewsSite_v1._1.Migrations.email3.resources
+C:\Users\you\Documents\Visual Studio 2015\Projects\NewsSite_v1.1\NewsSite_v1.1\obj\Debug\NewsSite_v1._1.Migrations.email31.resources
+C:\Users\you\Documents\Visual Studio 2015\Projects\NewsSite_v1.1\NewsSite_v1.1\obj\Debug\NewsSite_v1._1.Migrations.email4.resources
+C:\Users\you\Documents\Visual Studio 2015\Projects\NewsSite_v1.1\NewsSite_v1.1\obj\Debug\NewsSite_v1._1.Migrations.email5.resources
