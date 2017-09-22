@@ -29,9 +29,12 @@
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("Home", "Index", "Home")</li>
                     @using Microsoft.AspNet.Identity
-                    @if (Request.IsAuthenticated && User.Identity.GetUserName()=="shuoqi715@gmail.com")
+                    @if (Request.IsAuthenticated)
                     {
-                        <li>@Html.ActionLink("Journalists", "Index", "Journalists")</li>
+                        if (User.Identity.GetUserName() == "shuoqi715@gmail.com")
+                        {
+                            <li>@Html.ActionLink("Journalists", "Index", "Journalists")</li>
+                        }
                         <li>@Html.ActionLink("Articles", "Index", "Articles")</li>
                     }
                     <li>@Html.ActionLink("Documentation", "Documentation", "Home")</li>

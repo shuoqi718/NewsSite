@@ -31,19 +31,11 @@ namespace NewsSite_v1._1.Controllers
             }
             return View(db.EmailForm.ToList());
         }
-
-       [HttpPost]
-       public ActionResult Index(List<EmailFormModel> modelList)
+        
+        [HttpPost]
+        public ActionResult Index(List<bool> check)
         {
-            if(ModelState.IsValid)
-            {
-                foreach(var model in modelList)
-                {
-                    db.EmailForm.Remove(model);
-                }
-                return RedirectToAction("Index");
-            }
-            return View();
+            return RedirectToAction("Index");
         }
         
 
