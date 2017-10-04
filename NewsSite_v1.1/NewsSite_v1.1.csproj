@@ -199,15 +199,13 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\ArticlesController.cs" />
+    <Compile Include="Controllers\AspNetUsersController.cs" />
     <Compile Include="Controllers\EmailFormModelsController.cs" />
-    <Compile Include="Migrations\201709180427047_InitialCreate.cs" />
-    <Compile Include="Migrations\201709180427047_InitialCreate.Designer.cs">
-      <DependentUpon>201709180427047_InitialCreate.cs</DependentUpon>
+    <Compile Include="Migrations\201710040419591_jounralist.cs" />
+    <Compile Include="Migrations\201710040419591_jounralist.Designer.cs">
+      <DependentUpon>201710040419591_jounralist.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201710040020415_user-attri.cs" />
-    <Compile Include="Migrations\201710040020415_user-attri.Designer.cs">
-      <DependentUpon>201710040020415_user-attri.cs</DependentUpon>
-    </Compile>
+    <Compile Include="Models\AspNetUser.cs" />
     <Compile Include="Models\EmailFormModel.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\JournalistsController.cs" />
@@ -222,6 +220,7 @@
     <Compile Include="Models\Journalist.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\NewsModel.cs" />
+    <Compile Include="Models\UserModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -586,6 +585,8 @@
     <Content Include="Views\Manage\Upload.cshtml" />
     <Content Include="Views\EmailFormModels\Edit.cshtml" />
     <Content Include="Views\EmailFormModels\Index.cshtml" />
+    <Content Include="Views\AspNetUsers\Details.cshtml" />
+    <Content Include="Views\AspNetUsers\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -595,11 +596,8 @@
     <None Include="Project_Readme.html" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201709180427047_InitialCreate.resx">
-      <DependentUpon>201709180427047_InitialCreate.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201710040020415_user-attri.resx">
-      <DependentUpon>201710040020415_user-attri.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201710040419591_jounralist.resx">
+      <DependentUpon>201710040419591_jounralist.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

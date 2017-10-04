@@ -15,4 +15,7 @@
     $("#jourTable").DataTable({
         "order": [[4, "asc"]]
     });
+    $("#UserTable").DataTable({
+        "order": [[2, "asc"]]
+    });
 })

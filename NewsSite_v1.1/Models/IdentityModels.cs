@@ -11,7 +11,8 @@ namespace NewsSite_v1._1.Models
     public class ApplicationUser : IdentityUser
     {
         public DateTime DoB { get; set; }
-        public string Name { get; set; }
+        public string FName { get; set; }
+        public string LName { get; set; }
         public string Phone { get; set; }
         public string Country { get; set; }
         public string Company { get; set; }

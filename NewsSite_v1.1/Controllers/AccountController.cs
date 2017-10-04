@@ -18,6 +18,7 @@ namespace NewsSite_v1._1.Controllers
     {
         private ApplicationSignInManager _signInManager;
         private ApplicationUserManager _userManager;
+        private NewsModel db = new NewsModel();
 
         public AccountController()
         {
@@ -178,10 +179,13 @@ namespace NewsSite_v1._1.Controllers
             ViewBag.CountryList = CountryList;
             if (ModelState.IsValid)
             {
-                var user = new ApplicationUser { UserName = model.Email, Email = model.Email, Name = model.Name, Phone = model.Phone, DoB = model.DoB, Country = model.Country, Company = model.Company };
+                var user = new ApplicationUser { UserName = model.Email, Email = model.Email, FName = model.FName, LName = model.LName, Phone = model.Phone, DoB = model.DoB, Country = model.Country, Company = model.Company };
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
+                    Journalist journalist = new Journalist(model.FName, model.LName, model.Email, model.Phone, model.DoB, model.Country, model.Company);
+                    db.Journalists.Add(journalist);
+                    db.SaveChanges();
                     await SignInManager.SignInAsync(user, isPersistent:false, rememberBrowser:false);
                     
                     // For more information on how to enable account confirmation and password reset please visit http://go.microsoft.com/fwlink/?LinkID=320771

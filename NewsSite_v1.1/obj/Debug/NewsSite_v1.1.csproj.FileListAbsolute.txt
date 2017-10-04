@@ -79,6 +79,5 @@ c:\users\you\documents\visual studio 2015\Projects\NewsSite_v1.1\NewsSite_v1.1\b
 c:\users\you\documents\visual studio 2015\Projects\NewsSite_v1.1\NewsSite_v1.1\obj\Debug\NewsSite_v1.1.csprojResolveAssemblyReference.cache
 c:\users\you\documents\visual studio 2015\Projects\NewsSite_v1.1\NewsSite_v1.1\obj\Debug\NewsSite_v1.1.dll
 c:\users\you\documents\visual studio 2015\Projects\NewsSite_v1.1\NewsSite_v1.1\obj\Debug\NewsSite_v1.1.pdb
-C:\Users\you\documents\visual studio 2015\Projects\NewsSite_v1.1\NewsSite_v1.1\obj\Debug\NewsSite_v1._1.Migrations.InitialCreate.resources
-C:\Users\you\documents\visual studio 2015\Projects\NewsSite_v1.1\NewsSite_v1.1\obj\Debug\NewsSite_v1.1.csproj.GenerateResource.Cache
-C:\Users\you\documents\visual studio 2015\Projects\NewsSite_v1.1\NewsSite_v1.1\obj\Debug\NewsSite_v1._1.Migrations.userattri.resources
+C:\Users\you\Documents\Visual Studio 2015\Projects\NewsSite_v1.1\NewsSite_v1.1\obj\Debug\NewsSite_v1._1.Migrations.jounralist.resources
+C:\Users\you\Documents\Visual Studio 2015\Projects\NewsSite_v1.1\NewsSite_v1.1\obj\Debug\NewsSite_v1.1.csproj.GenerateResource.Cache
