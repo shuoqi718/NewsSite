@@ -201,9 +201,9 @@
     <Compile Include="Controllers\ArticlesController.cs" />
     <Compile Include="Controllers\AspNetUsersController.cs" />
     <Compile Include="Controllers\EmailFormModelsController.cs" />
-    <Compile Include="Migrations\201710040419591_jounralist.cs" />
-    <Compile Include="Migrations\201710040419591_jounralist.Designer.cs">
-      <DependentUpon>201710040419591_jounralist.cs</DependentUpon>
+    <Compile Include="Migrations\201710040449477_user.cs" />
+    <Compile Include="Migrations\201710040449477_user.Designer.cs">
+      <DependentUpon>201710040449477_user.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\AspNetUser.cs" />
     <Compile Include="Models\EmailFormModel.cs" />
@@ -596,8 +596,8 @@
     <None Include="Project_Readme.html" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201710040419591_jounralist.resx">
-      <DependentUpon>201710040419591_jounralist.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201710040449477_user.resx">
+      <DependentUpon>201710040449477_user.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

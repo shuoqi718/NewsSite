@@ -23,6 +23,11 @@ namespace NewsSite_v1._1.Models
             Company = company;
         }
 
+        public Journalist()
+        {
+            Articles = new HashSet<Article>(); 
+        }
+
         [Key]
         [Display(Name = "Journalist ID")]
         public int JId { get; set; }
