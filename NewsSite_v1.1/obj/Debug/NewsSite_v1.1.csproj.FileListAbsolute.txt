@@ -79,11 +79,6 @@ c:\users\you\documents\visual studio 2015\Projects\NewsSite_v1.1\NewsSite_v1.1\b
 c:\users\you\documents\visual studio 2015\Projects\NewsSite_v1.1\NewsSite_v1.1\obj\Debug\NewsSite_v1.1.csprojResolveAssemblyReference.cache
 c:\users\you\documents\visual studio 2015\Projects\NewsSite_v1.1\NewsSite_v1.1\obj\Debug\NewsSite_v1.1.dll
 c:\users\you\documents\visual studio 2015\Projects\NewsSite_v1.1\NewsSite_v1.1\obj\Debug\NewsSite_v1.1.pdb
-C:\Users\you\Documents\Visual Studio 2015\Projects\NewsSite_v1.1\NewsSite_v1.1\obj\Debug\NewsSite_v1._1.Migrations.email.resources
-C:\Users\you\Documents\Visual Studio 2015\Projects\NewsSite_v1.1\NewsSite_v1.1\obj\Debug\NewsSite_v1.1.csproj.GenerateResource.Cache
-C:\Users\you\Documents\Visual Studio 2015\Projects\NewsSite_v1.1\NewsSite_v1.1\obj\Debug\NewsSite_v1._1.Migrations.email1.resources
-C:\Users\you\Documents\Visual Studio 2015\Projects\NewsSite_v1.1\NewsSite_v1.1\obj\Debug\NewsSite_v1._1.Migrations.Email2.resources
-C:\Users\you\Documents\Visual Studio 2015\Projects\NewsSite_v1.1\NewsSite_v1.1\obj\Debug\NewsSite_v1._1.Migrations.email3.resources
-C:\Users\you\Documents\Visual Studio 2015\Projects\NewsSite_v1.1\NewsSite_v1.1\obj\Debug\NewsSite_v1._1.Migrations.email31.resources
-C:\Users\you\Documents\Visual Studio 2015\Projects\NewsSite_v1.1\NewsSite_v1.1\obj\Debug\NewsSite_v1._1.Migrations.email4.resources
-C:\Users\you\Documents\Visual Studio 2015\Projects\NewsSite_v1.1\NewsSite_v1.1\obj\Debug\NewsSite_v1._1.Migrations.email5.resources
+C:\Users\you\documents\visual studio 2015\Projects\NewsSite_v1.1\NewsSite_v1.1\obj\Debug\NewsSite_v1._1.Migrations.InitialCreate.resources
+C:\Users\you\documents\visual studio 2015\Projects\NewsSite_v1.1\NewsSite_v1.1\obj\Debug\NewsSite_v1.1.csproj.GenerateResource.Cache
+C:\Users\you\documents\visual studio 2015\Projects\NewsSite_v1.1\NewsSite_v1.1\obj\Debug\NewsSite_v1._1.Migrations.userattri.resources

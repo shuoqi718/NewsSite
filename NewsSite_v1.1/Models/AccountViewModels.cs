@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace NewsSite_v1._1.Models
@@ -65,11 +66,6 @@ namespace NewsSite_v1._1.Models
     public class RegisterViewModel
     {
         [Required]
-        [Display(Name = "Username")]
-        public string UserName{get;set;}
-
-
-        [Required]
         [EmailAddress]
         [Display(Name = "Email")]
         public string Email { get; set; }
@@ -84,6 +80,22 @@ namespace NewsSite_v1._1.Models
         [Display(Name = "Confirm password")]
         [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
         public string ConfirmPassword { get; set; }
+
+        [Required]
+        public string Name { get; set; }
+
+        [Required]
+        [Display(Name = "Date of Birth")]
+        public DateTime DoB { get; set; }
+
+        [Required]
+        [Display(Name = "Phone Number")]
+        [DataType(DataType.PhoneNumber)]
+        public string Phone { get; set; }
+
+        public string Country { get; set; }
+
+        public string Company { get; set; }
     }
 
     public class ResetPasswordViewModel
