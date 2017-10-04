@@ -1,8 +1,17 @@
 ﻿@model IEnumerable<NewsSite_v1._1.Models.Article>
-
+@using Microsoft.AspNet.Identity
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
+    var JId = 0;
+    foreach (var item in ViewBag.JId)
+    {
+        if (User.Identity.GetUserName() == item.Email)
+        {
+            JId = item.JId;
+            break;
+        }
+    }
 }
 
 <h2>Articles</h2>
@@ -37,31 +46,34 @@
     <tbody>
         @foreach (var item in Model)
         {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.AId)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.JId)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Journalist.FName)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Title)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.PostTime)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Category)
-                </td>
-                <td>
-                    @Html.ActionLink("Edit", "Edit", new { id = item.AId }, new { @class = "btn btn-success btn-xs" }) |
-                    @Html.ActionLink("Details", "Details", new { id = item.AId }, new { @class = "btn btn-warning btn-xs" }) |
-                    @Html.ActionLink("Delete", "Delete", new { id = item.AId }, new { @class = "btn btn-danger btn-xs" })
-                </td>
-            </tr>
+            if (item.JId == JId || User.Identity.GetUserName() == "shuoqi715@gmail.com")
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.AId)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.JId)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Journalist.FName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Title)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.PostTime)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Category)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Edit", "Edit", new { id = item.AId }, new { @class = "btn btn-success btn-xs" }) |
+                        @Html.ActionLink("Details", "Details", new { id = item.AId }, new { @class = "btn btn-warning btn-xs" }) |
+                        @Html.ActionLink("Delete", "Delete", new { id = item.AId }, new { @class = "btn btn-danger btn-xs" })
+                    </td>
+                </tr>
+            }
         }
     </tbody>
 </table>
