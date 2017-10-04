@@ -200,10 +200,9 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\ArticlesController.cs" />
     <Compile Include="Controllers\AspNetUsersController.cs" />
-    <Compile Include="Controllers\EmailFormModelsController.cs" />
-    <Compile Include="Migrations\201710040449477_user.cs" />
-    <Compile Include="Migrations\201710040449477_user.Designer.cs">
-      <DependentUpon>201710040449477_user.cs</DependentUpon>
+    <Compile Include="Migrations\201710041057143_email.cs" />
+    <Compile Include="Migrations\201710041057143_email.Designer.cs">
+      <DependentUpon>201710041057143_email.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\AspNetUser.cs" />
     <Compile Include="Models\EmailFormModel.cs" />
@@ -583,8 +582,6 @@
     <Content Include="Views\Journalists\Index.cshtml" />
     <Content Include="Views\Manage\SendEmail.cshtml" />
     <Content Include="Views\Manage\Upload.cshtml" />
-    <Content Include="Views\EmailFormModels\Edit.cshtml" />
-    <Content Include="Views\EmailFormModels\Index.cshtml" />
     <Content Include="Views\AspNetUsers\Details.cshtml" />
     <Content Include="Views\AspNetUsers\Index.cshtml" />
   </ItemGroup>
@@ -596,8 +593,8 @@
     <None Include="Project_Readme.html" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201710040449477_user.resx">
-      <DependentUpon>201710040449477_user.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201710041057143_email.resx">
+      <DependentUpon>201710041057143_email.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

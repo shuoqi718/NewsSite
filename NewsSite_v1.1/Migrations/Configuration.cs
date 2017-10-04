@@ -5,14 +5,14 @@ namespace NewsSite_v1._1.Migrations
     using System.Data.Entity.Migrations;
     using System.Linq;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<NewsSite_v1._1.Models.ApplicationDbContext>
+    internal sealed class Configuration : DbMigrationsConfiguration<NewsSite_v1._1.Models.NewsModel>
     {
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
         }
 
-        protected override void Seed(NewsSite_v1._1.Models.ApplicationDbContext context)
+        protected override void Seed(NewsSite_v1._1.Models.NewsModel context)
         {
             //  This method will be called after migrating to the latest version.
 
