@@ -199,35 +199,12 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\ArticlesController.cs" />
-    <Compile Include="Controllers\EmailFormModelsController.cs" />
-    <Compile Include="Migrations\201709191147571_email.cs" />
-    <Compile Include="Migrations\201709191147571_email.Designer.cs">
-      <DependentUpon>201709191147571_email.cs</DependentUpon>
+    <Compile Include="Controllers\AspNetUsersController.cs" />
+    <Compile Include="Migrations\201710050308457_user.cs" />
+    <Compile Include="Migrations\201710050308457_user.Designer.cs">
+      <DependentUpon>201710050308457_user.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201709191152103_email1.cs" />
-    <Compile Include="Migrations\201709191152103_email1.Designer.cs">
-      <DependentUpon>201709191152103_email1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201709200003437_Email2.cs" />
-    <Compile Include="Migrations\201709200003437_Email2.Designer.cs">
-      <DependentUpon>201709200003437_Email2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201709200045048_email3.cs" />
-    <Compile Include="Migrations\201709200045048_email3.Designer.cs">
-      <DependentUpon>201709200045048_email3.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201709211234141_email31.cs" />
-    <Compile Include="Migrations\201709211234141_email31.Designer.cs">
-      <DependentUpon>201709211234141_email31.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201709211313123_email4.cs" />
-    <Compile Include="Migrations\201709211313123_email4.Designer.cs">
-      <DependentUpon>201709211313123_email4.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201709211315539_email5.cs" />
-    <Compile Include="Migrations\201709211315539_email5.Designer.cs">
-      <DependentUpon>201709211315539_email5.cs</DependentUpon>
-    </Compile>
+    <Compile Include="Models\AspNetUser.cs" />
     <Compile Include="Models\EmailFormModel.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\JournalistsController.cs" />
@@ -242,6 +219,7 @@
     <Compile Include="Models\Journalist.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\NewsModel.cs" />
+    <Compile Include="Models\UserModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -604,8 +582,8 @@
     <Content Include="Views\Journalists\Index.cshtml" />
     <Content Include="Views\Manage\SendEmail.cshtml" />
     <Content Include="Views\Manage\Upload.cshtml" />
-    <Content Include="Views\EmailFormModels\Edit.cshtml" />
-    <Content Include="Views\EmailFormModels\Index.cshtml" />
+    <Content Include="Views\AspNetUsers\Details.cshtml" />
+    <Content Include="Views\AspNetUsers\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -615,26 +593,8 @@
     <None Include="Project_Readme.html" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201709191147571_email.resx">
-      <DependentUpon>201709191147571_email.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201709191152103_email1.resx">
-      <DependentUpon>201709191152103_email1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201709200003437_Email2.resx">
-      <DependentUpon>201709200003437_Email2.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201709200045048_email3.resx">
-      <DependentUpon>201709200045048_email3.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201709211234141_email31.resx">
-      <DependentUpon>201709211234141_email31.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201709211313123_email4.resx">
-      <DependentUpon>201709211313123_email4.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201709211315539_email5.resx">
-      <DependentUpon>201709211315539_email5.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201710050308457_user.resx">
+      <DependentUpon>201710050308457_user.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

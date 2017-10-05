@@ -9,6 +9,7 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using NewsSite_v1._1.Models;
+using System.Collections.Generic;
 
 namespace NewsSite_v1._1.Controllers
 {
@@ -17,6 +18,7 @@ namespace NewsSite_v1._1.Controllers
     {
         private ApplicationSignInManager _signInManager;
         private ApplicationUserManager _userManager;
+        private NewsModel db = new NewsModel();
 
         public AccountController()
         {
@@ -139,6 +141,19 @@ namespace NewsSite_v1._1.Controllers
         [AllowAnonymous]
         public ActionResult Register()
         {
+            List<string> CountryList = new List<string>();
+            CultureInfo[] CInfoList = CultureInfo.GetCultures(CultureTypes.SpecificCultures);
+            foreach (CultureInfo CInfo in CInfoList)
+            {
+                RegionInfo R = new RegionInfo(CInfo.LCID);
+                if (!(CountryList.Contains(R.EnglishName)))
+                {
+                    CountryList.Add(R.EnglishName);
+                }
+            }
+
+            CountryList.Sort();
+            ViewBag.CountryList = CountryList;
             return View();
         }
 
@@ -149,12 +164,32 @@ namespace NewsSite_v1._1.Controllers
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> Register(RegisterViewModel model)
         {
+            List<string> CountryList = new List<string>();
+            CultureInfo[] CInfoList = CultureInfo.GetCultures(CultureTypes.SpecificCultures);
+            foreach (CultureInfo CInfo in CInfoList)
+            {
+                RegionInfo R = new RegionInfo(CInfo.LCID);
+                if (!(CountryList.Contains(R.EnglishName)))
+                {
+                    CountryList.Add(R.EnglishName);
+                }
+            }
+
+            CountryList.Sort();
+            ViewBag.CountryList = CountryList;
             if (ModelState.IsValid)
             {
+<<<<<<< HEAD
                 var user = new ApplicationUser { UserName = model.Email, Email = model.Email };
+=======
+                var user = new ApplicationUser { UserName = model.Email, Email = model.Email, FName = model.FName, LName = model.LName, Phone = model.Phone, DoB = model.DoB, Country = model.Country, Company = model.Company };
+>>>>>>> UserValidation
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
+                    Journalist journalist = new Journalist(model.FName, model.LName, model.Email, model.Phone, model.DoB, model.Country, model.Company);
+                    db.Journalists.Add(journalist);
+                    db.SaveChanges();
                     await SignInManager.SignInAsync(user, isPersistent:false, rememberBrowser:false);
                     
                     // For more information on how to enable account confirmation and password reset please visit http://go.microsoft.com/fwlink/?LinkID=320771

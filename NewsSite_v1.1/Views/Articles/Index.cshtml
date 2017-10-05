@@ -1,8 +1,17 @@
 ﻿@model IEnumerable<NewsSite_v1._1.Models.Article>
-
+@using Microsoft.AspNet.Identity
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
+    var JId = 0;
+    foreach (var item in ViewBag.JId)
+    {
+        if (User.Identity.GetUserName() == item.Email)
+        {
+            JId = item.JId;
+            break;
+        }
+    }
 }
 
 <h2>Articles</h2>
@@ -38,8 +47,12 @@
         @using Microsoft.AspNet.Identity
         @foreach (var item in Model)
         {
+<<<<<<< HEAD
             if (item.Journalist.Email == User.Identity.GetUserName() ||
                 User.Identity.GetUserName() == "shuoqi715@gmail.com")
+=======
+            if (item.JId == JId || User.Identity.GetUserName() == "shuoqi715@gmail.com")
+>>>>>>> UserValidation
             {
                 <tr>
                     <td>

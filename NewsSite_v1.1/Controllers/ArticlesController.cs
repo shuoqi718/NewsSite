@@ -17,6 +17,7 @@ namespace NewsSite_v1._1.Controllers
         // GET: Articles
         public ActionResult Index()
         {
+            ViewBag.JId = db.Journalists.ToList();
             var articles = db.Articles.Include(a => a.Journalist);
             return View(articles.ToList());
         }
@@ -39,7 +40,7 @@ namespace NewsSite_v1._1.Controllers
         // GET: Articles/Create
         public ActionResult Create()
         {
-            ViewBag.JId = new SelectList(db.Journalists, "JId", "FName");
+            ViewBag.JId = db.Journalists.ToList();
             return View();
         }
 

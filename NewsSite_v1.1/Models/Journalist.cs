@@ -11,9 +11,21 @@ namespace NewsSite_v1._1.Models
     public partial class Journalist
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Journalist()
+        public Journalist(string fName, string lName, string email, string phone, DateTime dob, string country,string company)
         {
             Articles = new HashSet<Article>();
+            FName = fName;
+            LName = lName;
+            Email = email;
+            Phone = phone;
+            DoB = dob;
+            Country = country;
+            Company = company;
+        }
+
+        public Journalist()
+        {
+            Articles = new HashSet<Article>(); 
         }
 
         [Key]
@@ -33,7 +45,6 @@ namespace NewsSite_v1._1.Models
         [DisplayName("Email")]
         [Required(ErrorMessage = "Please enter email address")]
         [DataType(DataType.EmailAddress)]
-        [StringLength(50)]
         public string Email { get; set; }
 
         [DisplayName("Phone Number")]
