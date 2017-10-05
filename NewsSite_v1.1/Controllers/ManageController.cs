@@ -11,6 +11,7 @@ using Microsoft.Owin.Security;
 using NewsSite_v1._1.Models;
 using System.IO;
 using System.Collections;
+using System.Collections.Generic;
 
 namespace NewsSite_v1._1.Controllers
 {
@@ -114,22 +115,24 @@ namespace NewsSite_v1._1.Controllers
         
         public ActionResult SendEmail()
         {
+            ViewBag.User = db.Users.ToList();
             return View();
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> SendEmail(EmailFormModel model)
+        public async Task<ActionResult> SendEmail(FormCollection form, EmailFormModel model)
         {
+            ViewBag.User = db.Users.ToList();
+            string[] userList = Request.Form["SendEmail"].Split(new char[] { ',' });
             ViewBag.Sending = "Sending Successful!";
             if (ModelState.IsValid)
             {
                 var body = "<p>Message:</p><p>{0}</p>";
                 var message = new MailMessage();
-                var User = db.Users.ToList();
-                foreach(var item in User)
+                foreach(var item in userList)
                 {
-                    message.To.Add(new MailAddress(item.Email));
+                    message.To.Add(item);
                 }
                 message.From = new MailAddress("shuoqi718@outlook.com");  // replace with valid value
                 message.Subject = "Your email subject";
@@ -142,7 +145,7 @@ namespace NewsSite_v1._1.Controllers
                     var credential = new NetworkCredential
                     {
                         UserName = "shuoqi718@outlook.com",  // replace with valid value
-                        Password = "xddx502502"  // replace with valid value
+                        Password = "Xddx502502"  // replace with valid value
                     };
                     smtp.Credentials = credential;
                     smtp.Host = "smtp-mail.outlook.com";

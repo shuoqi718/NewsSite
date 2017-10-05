@@ -18,4 +18,4 @@
     $("#UserTable").DataTable({
         "order": [[2, "asc"]]
     });
-})
+});
